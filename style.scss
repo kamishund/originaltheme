@@ -1,0 +1,643 @@
+
+body{
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  }
+a{
+    text-decoration: none;
+}
+
+
+// header
+.submenu{
+    visibility: hidden;
+    position: absolute;
+    top: 100px;
+    left:0;
+    right:0;
+    background-color: rgba($color: rgb(238, 238, 238), $alpha: 1);
+    transition: 0.5s;
+    opacity: 0;
+    height: 50vh;
+    ul{
+         width: 1000px;
+         margin: 0 auto;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-around;
+         align-content: space-around;
+         height: 100%;
+         li{
+             font-size: 24px;
+             font-weight: bold;
+             a{
+                color: #0070cf;
+             }
+         }
+    }
+    
+}
+
+.submenu.fadeIn{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.bg{
+    visibility: hidden;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    right:0;
+    bottom: 0;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    transition: 0.5s;
+    opacity: 0;
+}
+.bg.fadeIn{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+   
+}
+.header_in{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position:relative;
+    height: 100px;
+
+}
+header{
+    position:fixed;
+    z-index: 300;
+    background-color: #fff;
+    height: 100px;
+    width: 100%;
+    a{
+        color: #000;
+    }
+}
+
+.grobal_menu{
+    display: flex;
+    
+    .grobal_menu_item{
+        margin-right: 20px;
+    }
+    .grobal_menu_item_ttl{
+        display: block;
+        line-height: 100px;
+        padding-left:40px;
+        padding-right:40px;
+        font-weight: 600;
+    }
+}
+
+h1{
+    font-weight: bold;
+    margin-left: 40px;
+    font-size: 24px;
+    letter-spacing: 0.3em;
+    color: #0070cf;
+    a{
+        color: #0070cf;
+    }
+}
+.contact_link{
+    font-weight: bold;
+    line-height: 100px;
+    width: 140px;
+    text-align: center;
+    background-color: #0070cf;
+    a{
+        color: #fff;
+        display: block;
+    }
+}
+
+.openbtn6{
+    display: none;
+    margin-right: 20px;
+    @media screen and (max-width:999px) {
+        display: block;
+     }
+}
+.hanmenu{
+    display: none;
+    position: absolute;
+    top: 100px;
+    left:0;
+    right: 0;
+    min-height: 100vh;
+    background-color: #0070cf;
+    z-index: 200;
+    color: #fff;
+    overflow-y: scroll;
+   
+    .grobal_menu_sp{
+        
+        box-sizing: border-box;
+        padding: 10% 5%;
+        height: 100%;
+        width: 100%;
+       display: flex;
+       justify-content: space-around;
+       flex-direction: column;
+    //    align-items: center;
+       .ac_wrap{
+           display: flex;
+           justify-content: space-between;
+           width: 100%;
+           align-items: center;
+           a{
+               font-size: 24px;
+               color: #fff;
+
+           }
+       }
+       .submenu_sp{
+           height: 0;
+           overflow: hidden;
+           li{
+               box-sizing: border-box;
+               padding: 20px 20px;
+               border: solid 1px #fff;
+               margin-bottom: 10px;
+              a{
+                color: #fff;
+                display: block;
+                font-size: 18px;
+              } 
+           }
+       }
+    }
+}
+.contact_link,.grobal_menu{
+    @media screen and (max-width:999px) {
+        display: none;
+     }
+}
+
+
+// mainvisu
+
+.sec_inner{
+    padding-top: 100px;
+}
+
+
+// about
+
+.p_about{
+    text-align: center;
+    margin-top: 80px;
+    p{
+        font-size: 18px;
+        line-height: 1.5;
+        letter-spacing: 0.05em;
+    }
+}
+
+
+
+// tab
+/*tabの形状*/
+.tab{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .tab li a{
+    display: block;
+    background:#ddd;
+    padding:24px 20px;
+    color: #000;
+  }
+  /*liにactiveクラスがついた時の形状*/
+  .tab li.active a{
+    background:#0070cf;
+    color: #fff;
+  }
+  
+  
+  /*エリアの表示非表示と形状*/
+  .area {
+    display: none;/*はじめは非表示*/
+    opacity: 0;/*透過0*/
+    background: #fff;
+    padding:50px 50px;
+    @media screen and (max-width:520px) {
+        padding:50px 20px;
+         }
+    border: 2px solid #0070cf;
+  }
+  
+  /*areaにis-activeというクラスがついた時の形状*/
+  .area.is-active {
+      display: block;/*表示*/
+      animation-name: displayAnime;/*ふわっと表示させるためのアニメーション*/
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+  }
+  
+  @keyframes displayAnime{
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .tab_wrap{
+      max-width: 1000px;
+      margin: 0 auto;
+      margin-top: 120px;
+      padding: 0 12px;
+  }
+
+  .tab li{
+      width: 40%;
+  }
+  
+  .news_list{
+    display: flex;
+    align-items: center;
+    padding: 20px 0px;
+    border-bottom:1px solid #ddd;
+    @media screen and (max-width:520px) {
+    flex-direction: column;
+    align-items: flex-start;
+     }
+    
+    .news_date{
+        width: 140px;
+       
+        @media screen and (max-width:520px) {
+           width: auto;
+           margin-bottom: 16px;
+           
+        }
+    }
+  }
+
+  .news_title{
+      color: #000;
+      display: block;
+  }
+
+
+
+  .qanda h2{
+    padding-top : 96px;
+    padding-bottom:48px;
+    text-align: center;
+    color : #0070cf;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .Qbtn{
+      display: inline-block;
+      border-radius: 20px;
+      border : 1px solid #0070cf;
+      padding : 9px 12px;
+      font-size: large;
+      font-family: 'Lato', sans-serif;
+    //   margin: 22px 32px;
+      background-color: #FFF;
+      margin-right: 40px;
+  }
+
+  .qanda a {
+    color: #0070cf;
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 20px;
+ box-sizing: border-box;
+}
+
+  .qanda a:visited{
+    color: #0070cf;
+}
+
+
+.plus{
+    width:30px;
+    height:30px;
+    display: inline-block;
+    position: absolute;
+    top : 50%;
+    right:0;
+    transform: translateY(-50%);
+}
+
+.plus::after,.plus::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top : 50%;
+    width: 100%;
+    height: 2px;
+    background-color: #0070cf;
+}
+
+.plus::before{
+    transform: rotate(90deg);
+}
+
+.batuicon{
+    transform: rotate(45deg);
+}
+
+
+.batuicon::after,.batuicon::before{
+    background-color: #FFF;
+}
+.qanda dd{
+    box-sizing: border-box;
+    width: 100%;
+    background-color :#FFF;
+    border: #0070cf solid 1px;
+    overflow: hidden;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.qanda dt{
+    // height : 88px;
+    width : 100%;
+    border: #0070cf solid 1px;
+}
+
+.qanda dd .Qbtn{
+    color:#FFF;
+    background-color: #0070cf;
+}
+
+.qanda dl{
+    margin-bottom:24px;
+}
+
+.dlunder{
+    padding-bottom: 96px;
+}
+
+.qanda{
+    margin-bottom: 80px;
+    .wrapper{
+        max-width: 1000px;
+        margin: 0 auto;
+        @media screen and (max-width:520px) {
+           
+            padding-left: 20px;
+            padding-right: 20px;
+            
+         }
+    }
+}
+
+/*contact
+-------------------------------------------------------*/
+
+.contact{
+    background-color: #F3F3F5;
+    padding-bottom: 96px;
+    .plus {
+        top: 5%;
+        right: 5%;
+        transform: rotate(45deg);
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    h3{
+        text-align: center;
+        color : #0070cf;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 40px;
+    }
+}
+.contact h2{
+    padding-top : 96px;
+    padding-bottom:48px;
+    text-align: center;
+    color : #0070cf;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+#contactbtn{
+    display : block;
+    text-align: center;
+    background-color : #0070cf;
+    color: #FFF;
+    max-width:300px;
+    margin : 0 auto;
+    padding: 34px 20px;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+#bg{
+    position: fixed;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom:0;
+    background-color:rgba(0,0,0,0.4);
+    // display: none;
+    #contactbox{
+        background-color: #fff;
+        position: absolute;
+        top: 150px;
+        left: 3%;
+        right: 3%;
+        bottom:10%;
+        padding: 0 4%;
+        overflow-y: scroll;
+        @media screen and (min-width:1000px) {
+            left: 20%;
+            right: 20%;
+            
+         }
+        input{
+            width: 95%;
+        }
+        textarea{
+            width: 95%;
+            text-align: center;
+        }
+        label{
+            line-height: 3;
+            text-align: center;
+        }
+        input[type="submit"]{
+            margin-top: 20px;
+        }
+
+    }
+}
+
+
+
+.mbtn{
+    display : block;
+    text-align: center;
+    background-color : #0070cf;
+    color: #FFF;
+    max-width:300px;
+    margin : 0 auto;
+    padding: 34px 20px;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    margin-top: 24px;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+// archive
+
+main{
+    padding-top: 100px;
+    min-height: 90vw;
+    .tab_wrap{
+        margin-top: 40px;
+    }
+}
+
+.section_ttl{
+    padding-top : 96px;
+    text-align: center;
+    color : #0070cf;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.btnarea{
+    display: flex;
+    justify-content: center;
+    max-width: 700px;
+    margin: 0 auto;
+    .button{
+        display : block;
+        text-align: center;
+        background-color : #0070cf;
+        color: #FFF;
+        max-width:300px;
+        margin : 0 auto;
+        padding: 20px 30px;
+        font-size: 1.2rem;
+        box-sizing: border-box;
+        margin-top: 24px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+
+// single
+.p_single{
+    padding-top: 120px;
+    padding-bottom: 200px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 750px;
+    .news_title{
+        font-size: 2em;
+         font-weight: 700;
+         line-height: 1.3;
+    }
+    .p_single_flex{
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        .news_cat{
+            color: #fff;
+            padding: 0.8em;
+            font-size: 0.75em;
+            background-color: #333;
+            margin-left: 2em;
+        }
+        .news_date{
+            font-weight: 600;
+            color: rgb(172, 172, 172);
+        }
+        .color{
+            color: #333;
+        }
+    }
+    .p_news_content{
+        margin-top: 60px;
+        line-height: 1.3;
+        color: #333;
+        max-width: 100%;
+        img{
+            max-width: 100%;
+            object-fit: contain;
+        }
+        *{
+            max-width: 100%;
+             word-wrap: break-word;
+        }
+        p{
+            line-height: 1.8;
+            letter-spacing: 0.005em;
+        }
+        div{
+            line-height: 1.8;
+            letter-spacing: 0.005em;
+        }
+    }
+
+    .img{
+        max-width: 100%;
+        img{
+            width: 100%;
+        }
+    }
+
+    .result_ttl{
+        font-size: 1.5em;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    .result_text{
+        padding-left: 10px;
+        margin-top: 10px;
+        margin-bottom: 40px;
+        line-height: 1.5;
+    }
+  
+}
+
+
+.p_single {
+    padding: 0 10px;
+    padding-top: 120px;
+    padding-bottom: 200px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 750px;
+    box-sizing: border-box;
+}
+
+footer{
+    height: 80px;
+    background: #0070cf;
+    p{
+        text-align: center;
+        color: #fff;
+        line-height: 80px;
+    }
+}

@@ -1,0 +1,139 @@
+
+/*==================================================
+　5-2-6 3本線が回転して×に
+===================================*/
+
+/*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+.openbtn6{
+  position: relative;/*ボタン内側の基点となるためrelativeを指定*/
+  background:#DBB82E;
+  cursor: pointer;
+    width: 50px;
+    height:50px;
+  border-radius: 5px;
+}
+
+/*ボタン内側*/
+.openbtn6 span{
+    display: inline-block;
+    transition: all .4s;/*アニメーションの設定*/
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+  background: #fff;
+  }
+
+
+.openbtn6 span:nth-of-type(1) {
+  top:15px; 
+    width: 45%;
+}
+
+.openbtn6 span:nth-of-type(2) {
+  top:23px;
+    width: 35%;
+}
+
+.openbtn6 span:nth-of-type(3) {
+  top:31px;
+    width: 20%;
+}
+
+/*activeクラスが付与されると線が回転して×になる*/
+
+.openbtn6.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-135deg);
+    width: 30%;
+}
+
+.openbtn6.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.openbtn6.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(135deg);
+    width: 30%;
+}
+
+
+
+
+
+
+.openbtn1{
+  position: relative;/*ボタン内側の基点となるためrelativeを指定*/
+  /* background:#57a2c7; */
+  cursor: pointer;
+    width: 50px;
+    height:50px;
+  border-radius: 5px;
+}
+
+/*ボタン内側*/
+.openbtn1 span{
+    display: inline-block;
+    transition: all .4s;/*アニメーションの設定*/
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+  background: #fff;
+    width: 45%;
+  }
+
+.openbtn1 span:nth-of-type(1) {
+  top:15px; 
+}
+
+.openbtn1 span:nth-of-type(2) {
+  top:23px;
+}
+
+.openbtn1 span:nth-of-type(3) {
+  top:31px;
+}
+
+/*activeクラスが付与されると線が回転して×に*/
+
+.openbtn1.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn1.active span:nth-of-type(2) {
+  opacity: 0;/*真ん中の線は透過*/
+}
+
+.openbtn1.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+
+/*activeクラスが付与されると線が回転して×に*/
+
+.openbtn1 span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(0deg);
+  width: 30%;
+}
+
+.openbtn1 span:nth-of-type(2) {
+opacity: 0;/*真ん中の線は透過*/
+}
+
+.openbtn1 span:nth-of-type(3){
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(90deg);
+  width: 30%;
+}
